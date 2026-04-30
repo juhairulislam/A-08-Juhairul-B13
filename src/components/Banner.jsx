@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const HeroPage = () => {
+const BannerPage = () => {
   return (
     <div className='my-4'>
 
@@ -22,4 +22,4 @@ const HeroPage = () => {
   );
 };
 
-export default HeroPage;
+export default BannerPage;
