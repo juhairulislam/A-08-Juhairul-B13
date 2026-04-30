@@ -33,7 +33,7 @@ const Navbar = () => {
                     </Image>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 flex gap-4 text-md font-medium">
+                    <ul className="menu menu-horizontal px-1 flex gap-4 text-md font-medium ">
 
                         <NavLink href={'/'}>Home</NavLink>
                         <NavLink href={'/products'}>Products</NavLink>
