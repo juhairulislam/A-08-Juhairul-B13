@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import NavLink from './NavLink';
 
 const Navbar = () => {
 
@@ -25,9 +26,9 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 flex gap-4">
 
-        <Link href={'/'}>Home</Link>
-        <Link href={'/products'}>Products</Link>
-        <Link href={'/my-profile'}>My Profile</Link>
+        <NavLink href={'/'}>Home</NavLink>
+        <NavLink href={'/products'}>Products</NavLink>
+        <NavLink href={'/my-profile'}>My Profile</NavLink>
     </ul>
   </div>
   <div className="navbar-end">
