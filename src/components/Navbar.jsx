@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
     return (
-        <div className=''>
+        <div className='z-50'>
             <div className="navbar bg-base-100 shadow-sm">
                 <div className="navbar-start px-4">
                     <div className="dropdown">
