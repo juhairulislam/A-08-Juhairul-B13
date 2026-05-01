@@ -4,6 +4,7 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { authClient } from "@/lib/auth-client"; //import the auth client
   import {toast } from 'react-toastify';
+import Link from 'next/link';
 
 
 const SignUpPage = () => {
@@ -96,7 +97,11 @@ toast.error(error.message);  }
             </button>
           </form>
 
-          <div className="mt-4 text-center text-gray-500">OR</div>
+           <div className='text-center my-4 text-md'>
+                                 <Link  href={'/login'}>Already have an account? <span className='text-blue-500'>Login</span> </Link>
+                               </div>
+
+          <div className="text-center text-gray-500">OR</div>
 
           <button
             className="w-full mt-4 border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100"

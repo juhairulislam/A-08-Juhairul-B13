@@ -3,34 +3,39 @@ import Image from 'next/image';
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { authClient } from "@/lib/auth-client"; //import the auth client
-  import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 const LoginPage = () => {
 
-  const handleSubmit =async (e) =>{
-  
+  const handleSubmit = async (e) => {
+
     e.preventDefault();
-     const email = e.target.email.value;
+    const email = e.target.email.value;
     const password = e.target.password.value;
-  
+
     // console.log({email , password})
-  
+
     const { data, error } = await authClient.signIn.email({
-  
+
       email,
       password,
-      
+      callbackURL: "/",
+
+
     })
-  
-    console.log({data , error})
-  
-    if(data){
-  toast.success("Log In Successful !");  }
-  
-    if(error){
-  toast.error(error.message);  }
-  
+
+    console.log({ data, error })
+
+    if (data) {
+      toast.success("Log In Successful !");
     }
+
+    if (error) {
+      toast.error(error.message);
+    }
+
+  }
 
 
   return (
@@ -70,11 +75,17 @@ const LoginPage = () => {
             </button>
           </form>
 
-          <div className="mt-4 text-center text-gray-500">OR</div>
+                     <div className='text-center my-4 text-md'>
+                       <Link  href={'/signup'}>Don't have an account? <span className='text-red-500'>Register</span> </Link>
+                     </div>
+
+
+          <div className="text-center text-gray-500">OR</div>
 
           <button
-            className="w-full mt-4 border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100"
+            className="w-full mt-2 border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100"
           >
+
             <FcGoogle />
             Continue with Google
           </button>
