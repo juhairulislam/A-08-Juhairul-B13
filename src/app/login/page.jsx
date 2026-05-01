@@ -5,7 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 const LoginPage = () => {
     return (
         <div>
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-300">
+            <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-orange-500 to-orange-300">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-96">
         <h2 className="text-2xl font-bold text-center mb-6 text-orange-500">
           SunCart Login ☀️
