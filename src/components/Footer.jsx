@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='mt-10'>
-            <footer className="footer footer-center py-10 md:px-20 bg-orange-50 text-base-content sm:footer-horizontal sm:text-left sm:items-start flex flex-col sm:flex-row sm:justify-between">
+            <footer className="footer footer-center py-10 md:px-20 bg-slate-100 text-base-content sm:footer-horizontal sm:text-left sm:items-start flex flex-col sm:flex-row sm:justify-between">
                 
                 <nav className="flex flex-col items-center sm:items-start w-full sm:w-auto">
                     <h6 className="footer-title">Legal</h6>

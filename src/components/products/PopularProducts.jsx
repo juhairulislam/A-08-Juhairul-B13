@@ -30,7 +30,7 @@ const PopularProducts = async () => {
                     {
                         AllProducts.map(p => <div key={p.id}
                         >
-                            <div className='rounded-xl shadow p-6'>
+                            <div className='rounded-xl shadow hover:shadow-xl transition p-6'>
 
                                 <Image
                                     alt={p.name}
