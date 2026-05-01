@@ -48,7 +48,7 @@ const PopularProducts = async () => {
 
                                 <div className='flex items-center justify-between mt-6'>
                                     <p className='font-bold text-2xl'>$ {p.price}</p>
-                                    <Link href={'/products'} className='btn text-white bg-orange-400'>View Details</Link>
+                                    <Link href={`/products/${p.id}`} className='btn text-white bg-orange-400'>View Details</Link>
 
                                 </div>
 
