@@ -43,6 +43,13 @@ toast.error(error.message);  }
 
   }
 
+
+    const handleSignUp = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-orange-500 to-orange-300">
@@ -109,6 +116,7 @@ toast.error(error.message);  }
           <div className="text-center text-gray-500">OR</div>
 
           <button
+          onClick={handleSignUp}
             className="w-full mt-4 border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100"
           >
             <FcGoogle />

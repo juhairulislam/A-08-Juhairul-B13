@@ -38,6 +38,13 @@ const LoginPage = () => {
   }
 
 
+  const handleLogIn = async () => {
+  await authClient.signIn.social({
+    provider: "google",
+  });
+};
+
+
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-orange-500 to-orange-300">
@@ -83,6 +90,7 @@ const LoginPage = () => {
           <div className="text-center text-gray-500">OR</div>
 
           <button
+          onClick={handleLogIn}
             className="w-full mt-2 border py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100"
           >
 
