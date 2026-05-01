@@ -16,7 +16,7 @@ const PopularProducts = async () => {
 
     const productsData = await products()
 
-    const AllProducts = productsData.slice(0, 3);
+    const AllProducts = productsData.slice(3,6 );
 
     // console.log(AllProducts)
 
