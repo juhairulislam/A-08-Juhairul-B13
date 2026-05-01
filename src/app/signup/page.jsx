@@ -5,9 +5,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { authClient } from "@/lib/auth-client"; //import the auth client
   import {toast } from 'react-toastify';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 const SignUpPage = () => {
+
+  const router = useRouter()
 
   const handleSubmit =async (e) =>{
 
@@ -31,7 +34,9 @@ const SignUpPage = () => {
   console.log({data , error})
 
   if(data){
-toast.success("Sign Up Successful !");  }
+toast.success("Sign Up Successful !"); 
+router.push('/login')
+ }
 
   if(error){
 toast.error(error.message);  }
