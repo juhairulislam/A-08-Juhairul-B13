@@ -1,8 +1,38 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
+import { authClient } from "@/lib/auth-client"; //import the auth client
+  import {toast } from 'react-toastify';
 
 const LoginPage = () => {
+
+  const handleSubmit =async (e) =>{
+  
+    e.preventDefault();
+     const email = e.target.email.value;
+    const password = e.target.password.value;
+  
+    // console.log({email , password})
+  
+    const { data, error } = await authClient.signIn.email({
+  
+      email,
+      password,
+      
+    })
+  
+    console.log({data , error})
+  
+    if(data){
+  toast.success("Log In Successful !");  }
+  
+    if(error){
+  toast.error(error.message);  }
+  
+    }
+
+
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-orange-500 to-orange-300">
@@ -11,9 +41,8 @@ const LoginPage = () => {
             SunCart Login ☀️
           </h2>
 
-          <form className="space-y-3">
+          <form className="space-y-3" onSubmit={handleSubmit}>
 
-            {/* Email */}
             <div>
               <label className="text-sm font-medium">Email</label>
               <input
@@ -25,7 +54,6 @@ const LoginPage = () => {
               />
             </div>
 
-            {/* Password */}
             <div>
               <label className="text-sm font-medium">Password</label>
               <input
