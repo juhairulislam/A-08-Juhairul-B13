@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" height="200" width="400">
+  <defs>
+    <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="sunnyGrad">
+      <stop stop-color="#FF9500" offset="0%"></stop>
+      <stop stop-color="#FFCC00" offset="100%"></stop>
+    </linearGradient>
+    <filter height="200%" width="200%" y="-50%" x="-50%" id="softGlow">
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic"></feGaussianBlur>
+    </filter>
+  </defs>
+  
+  
+  <g transform="translate(95,95)">
+    <circle filter="url(#softGlow)" fill="url(#sunnyGrad)" r="48"></circle>
+    
+    <path opacity="0.85" stroke-linecap="round" stroke-width="14" stroke="#FFCC00" fill="none" d="M0,-78 Q12,-58 0,-48"></path>
+    <path opacity="0.85" stroke-linecap="round" stroke-width="14" stroke="#FFCC00" fill="none" d="M0,-78 Q-12,-58 0,-48"></path>
+    <path opacity="0.8" stroke-linecap="round" stroke-width="13" stroke="#FFCC00" fill="none" d="M55,-55 Q38,-38 48,-25"></path>
+    <path opacity="0.8" stroke-linecap="round" stroke-width="13" stroke="#FFCC00" fill="none" d="M-55,-55 Q-38,-38 -48,-25"></path>
+    <path opacity="0.75" stroke-linecap="round" stroke-width="12" stroke="#FFCC00" fill="none" d="M72,-20 Q52,-8 65,15"></path>
+    <path opacity="0.75" stroke-linecap="round" stroke-width="12" stroke="#FFCC00" fill="none" d="M-72,-20 Q-52,-8 -65,15"></path>
+  </g>
+
+  
+  <text text-anchor="middle" letter-spacing="-2.5px" fill="#1a1a1a" font-weight="700" font-size="52" font-family="system-ui, -apple-system, sans-serif" y="118" x="210">Sunny</text>
+  <text opacity="0.95" text-anchor="middle" letter-spacing="-2.5px" fill="url(#sunnyGrad)" font-weight="700" font-size="52" font-family="system-ui, -apple-system, sans-serif" y="118" x="210">Sunny</text>
+  
+  <text text-anchor="middle" letter-spacing="1.5px" fill="#333333" font-weight="600" font-size="29" font-family="system-ui, -apple-system, sans-serif" y="165" x="210">STYLE</text>
+</svg>

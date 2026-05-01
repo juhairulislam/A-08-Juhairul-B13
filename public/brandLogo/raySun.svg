@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" height="200" width="400">
+  <defs>
+    <linearGradient y2="70%" x2="80%" y1="30%" x1="20%" id="goldGrad">
+      <stop stop-color="#F5D76E" offset="0%"></stop>
+      <stop stop-color="#D4AF37" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <g transform="translate(95,98)">
+    
+    <rect stroke-linejoin="round" stroke-width="7" stroke="#111111" fill="none" rx="4" height="28" width="84" y="-18" x="-42"></rect>
+    
+    <ellipse fill="#111111" ry="16" rx="13" cy="-4" cx="-19"></ellipse>
+    <ellipse fill="#111111" ry="16" rx="13" cy="-4" cx="19"></ellipse>
+    
+    <line stroke-linecap="round" stroke-width="5" stroke="#111111" y2="-4" x2="6" y1="-4" x1="-6"></line>
+    
+    
+    <g opacity="0.85">
+      <line stroke-linecap="round" stroke-width="5" stroke="#D4AF37" y2="-72" x2="0" y1="-52" x1="0"></line>
+      <line stroke-linecap="round" stroke-width="4.5" stroke="#D4AF37" y2="-54" x2="52" y1="-36" x1="36"></line>
+      <line stroke-linecap="round" stroke-width="4.5" stroke="#D4AF37" y2="-54" x2="-52" y1="-36" x1="-36"></line>
+      <line stroke-linecap="round" stroke-width="4" stroke="#D4AF37" y2="-12" x2="68" y1="-8" x1="48"></line>
+      <line stroke-linecap="round" stroke-width="4" stroke="#D4AF37" y2="-12" x2="-68" y1="-8" x1="-48"></line>
+    </g>
+  </g>
+
+  
+  <text text-anchor="middle" letter-spacing="-1.8px" fill="#111111" font-weight="800" font-size="54" font-family="system-ui, 'Playfair Display', serif" y="118" x="215">RAY</text>
+  <text text-anchor="middle" letter-spacing="-1.8px" fill="url(#goldGrad)" font-weight="800" font-size="54" font-family="system-ui, 'Playfair Display', serif" y="118" x="215">RAY</text>
+  
+  <text text-anchor="middle" letter-spacing="3px" fill="#222222" font-weight="700" font-size="29" font-family="system-ui, 'Playfair Display', serif" y="160" x="215">SUN</text>
+</svg>
