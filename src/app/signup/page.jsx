@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 
 const SignUpPage = () => {
 
-  const router = useRouter()
+  // const router = useRouter()
 
   const handleSubmit =async (e) =>{
 
@@ -37,8 +37,7 @@ const SignUpPage = () => {
 
     await authClient.signOut();
 toast.success("Sign Up Successful !"); 
-router.refresh();
-router.push('/login')
+window.location.href = '/login';
  }
 
   if(error){
