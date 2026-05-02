@@ -10,21 +10,19 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
 
 
-    
-    
-    
-    
     const userData = authClient.useSession();
-    
+
     const user = userData.data?.user;
-    
+
+    console.log(user)
+
     const pathname = usePathname();
-const isAuthPage = pathname === '/login' || pathname === '/signup'
+    const isAuthPage = pathname === '/login' || pathname === '/signup'
 
 
-    const handleSignOut =async () =>{
+    const handleSignOut = async () => {
 
-await authClient.signOut() ;
+        await authClient.signOut();
     }
 
     return (
@@ -59,22 +57,22 @@ await authClient.signOut() ;
                         <NavLink href={'/my-profile'}>My Profile</NavLink>
                     </ul>
                 </div>
-                
+
 
                 {(user && !isAuthPage) ?
 
                     <div className="navbar-end flex gap-2">
                         <div className="avatar">
                             <div className="ring-orange-500 ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2 ">
-                                <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={50} height={50}/>
+                                <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={50} height={50} />
                             </div>
                         </div>
 
                         <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Logout</button>
-                    </div> :<div className="navbar-end flex gap-2">
-                    <Link className='btn bg-orange-400 text-white' href={'/signup'}>Sign Up</Link>
-                    <Link className='btn bg-orange-400 text-white' href={'/login'}>Login</Link>
-                </div>
+                    </div> : <div className="navbar-end flex gap-2">
+                        <Link className='btn bg-orange-500 text-white' href={'/signup'}>Sign Up</Link>
+                        <Link className='btn bg-orange-500 text-white' href={'/login'}>Login</Link>
+                    </div>
 
                 }
             </div>
