@@ -14,10 +14,10 @@ const Navbar = () => {
     const user = userData.data?.user;
 
 
+    const handleSignOut =async () =>{
 
-    // console.log(userData)
-
-
+await authClient.signOut() ;
+    }
 
     return (
         <div className='z-50'>
@@ -65,7 +65,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <button className='btn bg-orange-400 text-white'>Sign Out</button>
+                        <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Sign Out</button>
                     </div>
 
                 }
