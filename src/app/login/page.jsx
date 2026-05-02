@@ -25,7 +25,7 @@ const LoginPage = () => {
 
     })
 
-    console.log({ data, error })
+    // console.log({ data, error })
 
     if (data) {
       toast.success("Log In Successful !");

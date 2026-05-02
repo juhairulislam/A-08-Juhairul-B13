@@ -1,6 +1,7 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const EditProfileModalUI = ({ onClose }) => {
 
@@ -11,10 +12,14 @@ const EditProfileModalUI = ({ onClose }) => {
         const name = e.target.name.value;
         const image = e.target.image.value;
 
-        await authClient.updateUser({
-            name,
-            image
-        })
+         try {
+        await authClient.updateUser({ name, image });
+
+        onClose(); 
+    } catch (error) {
+        console.error(error);
+        toast.error("Update failed!");
+    }
 
     }
 
