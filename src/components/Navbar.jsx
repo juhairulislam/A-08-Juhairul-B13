@@ -61,7 +61,7 @@ const Navbar = () => {
 
                 {(user && !isAuthPage) ?
 
-                    <div className="navbar-end flex gap-2">
+                    <div className="navbar-end flex gap-3">
                         <div className="avatar">
                             <div className="ring-orange-500 ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2 ">
                                 <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={50} height={50} />
@@ -69,7 +69,7 @@ const Navbar = () => {
                         </div>
 
                         <button onClick={handleSignOut} className='btn bg-orange-500 text-white'>Logout</button>
-                    </div> : <div className="navbar-end flex gap-2">
+                    </div> : <div className="navbar-end flex gap-3">
                         <Link className='btn bg-orange-500 text-white' href={'/signup'}>Sign Up</Link>
                         <Link className='btn bg-orange-500 text-white' href={'/login'}>Login</Link>
                     </div>
