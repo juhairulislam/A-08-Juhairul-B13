@@ -1,10 +1,21 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
 import NavLink from './NavLink';
 import Image from 'next/image';
+import { authClient } from '@/lib/auth-client';
 // import logo from '/logo.png'
 
 const Navbar = () => {
+
+
+    const userData = authClient.useSession();
+
+    const user = userData.data?.user;
+
+
+
+    // console.log(userData)
 
 
 
@@ -24,10 +35,10 @@ const Navbar = () => {
                             <NavLink href={'/my-profile'}>My Profile</NavLink>      </ul>
                     </div>
                     <Image
-                    src='/logo.png'
-                    alt='SunCart Logo'
-                    width={75}
-                    height={75}
+                        src='/logo.png'
+                        alt='SunCart Logo'
+                        width={75}
+                        height={75}
                     >
 
                     </Image>
@@ -40,10 +51,23 @@ const Navbar = () => {
                         <NavLink href={'/my-profile'}>My Profile</NavLink>
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-2">
+                {!user && <div className="navbar-end flex gap-2">
                     <Link className='btn bg-orange-400 text-white' href={'/signup'}>Sign Up</Link>
                     <Link className='btn bg-orange-400 text-white' href={'/login'}>Login</Link>
-                </div>
+                </div>}
+
+                {user &&
+
+                    <div className="navbar-end flex gap-2">
+                        <div className="avatar">
+                            <div className="ring-orange-500 ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
+                                <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={60} height={60}/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
             </div>
         </div>
     );
