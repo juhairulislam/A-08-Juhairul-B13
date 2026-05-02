@@ -65,7 +65,7 @@ await authClient.signOut() ;
                             </div>
                         </div>
 
-                        <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Sign Out</button>
+                        <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Logout</button>
                     </div>
 
                 }
