@@ -60,11 +60,12 @@ const Navbar = () => {
 
                     <div className="navbar-end flex gap-2">
                         <div className="avatar">
-                            <div className="ring-orange-500 ring-offset-base-100 w-24 rounded-full ring-2 ring-offset-2">
-                                <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={60} height={60}/>
+                            <div className="ring-orange-500 ring-offset-base-100 w-15 rounded-full ring-2 ring-offset-2 p-1">
+                                <Image referrerPolicy="no-referrer" alt={user?.name} src={user?.image} width={50} height={50}/>
                             </div>
                         </div>
 
+                        <button className='btn bg-orange-400 text-white'>Sign Out</button>
                     </div>
 
                 }
