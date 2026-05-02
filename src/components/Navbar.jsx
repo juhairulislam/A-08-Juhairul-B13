@@ -19,8 +19,7 @@ const Navbar = () => {
     const user = userData.data?.user;
     
     const pathname = usePathname();
-    const isLoginPage = pathname === '/login';
-
+const isAuthPage = pathname === '/login' || pathname === '/signup'
 
 
     const handleSignOut =async () =>{
@@ -60,12 +59,9 @@ await authClient.signOut() ;
                         <NavLink href={'/my-profile'}>My Profile</NavLink>
                     </ul>
                 </div>
-                {(!user && isLoginPage) && <div className="navbar-end flex gap-2">
-                    <Link className='btn bg-orange-400 text-white' href={'/signup'}>Sign Up</Link>
-                    <Link className='btn bg-orange-400 text-white' href={'/login'}>Login</Link>
-                </div>}
+                
 
-                {(user && !isLoginPage) &&
+                {(user && !isAuthPage) ?
 
                     <div className="navbar-end flex gap-2">
                         <div className="avatar">
@@ -75,7 +71,10 @@ await authClient.signOut() ;
                         </div>
 
                         <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Logout</button>
-                    </div>
+                    </div> :<div className="navbar-end flex gap-2">
+                    <Link className='btn bg-orange-400 text-white' href={'/signup'}>Sign Up</Link>
+                    <Link className='btn bg-orange-400 text-white' href={'/login'}>Login</Link>
+                </div>
 
                 }
             </div>
