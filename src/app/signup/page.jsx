@@ -34,6 +34,8 @@ const SignUpPage = () => {
   console.log({data , error})
 
   if(data){
+
+    await authClient.signOut();
 toast.success("Sign Up Successful !"); 
 router.push('/login')
  }
