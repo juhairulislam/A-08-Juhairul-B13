@@ -9,11 +9,11 @@ const EditProfileModalUI = ({ onClose }) => {
         e.preventDefault();
 
         const name = e.target.name.value;
-        const email = e.target.email.value;
+        const image = e.target.image.value;
 
         await authClient.updateUser({
             name,
-            email
+            image
         })
 
     }
@@ -46,7 +46,7 @@ const EditProfileModalUI = ({ onClose }) => {
                     <div>
                         <label className="text-sm text-gray-600">Image URL</label>
                         <input
-                            name='email'
+                            name='image'
                             type="text"
                             placeholder="Enter image URL"
                             className="w-full mt-1 px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400 outline-none text-sm sm:text-base"
