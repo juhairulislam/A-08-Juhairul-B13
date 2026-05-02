@@ -68,7 +68,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <button onClick={handleSignOut} className='btn bg-orange-400 text-white'>Logout</button>
+                        <button onClick={handleSignOut} className='btn bg-orange-500 text-white'>Logout</button>
                     </div> : <div className="navbar-end flex gap-2">
                         <Link className='btn bg-orange-500 text-white' href={'/signup'}>Sign Up</Link>
                         <Link className='btn bg-orange-500 text-white' href={'/login'}>Login</Link>
