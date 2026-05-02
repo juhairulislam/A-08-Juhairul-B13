@@ -4,14 +4,23 @@ import React from 'react';
 import NavLink from './NavLink';
 import Image from 'next/image';
 import { authClient } from '@/lib/auth-client';
+import { usePathname } from 'next/navigation';
 // import logo from '/logo.png'
 
 const Navbar = () => {
 
 
+    
+    
+    
+    
     const userData = authClient.useSession();
-
+    
     const user = userData.data?.user;
+    
+    const pathname = usePathname();
+    const isLoginPage = pathname === '/login';
+
 
 
     const handleSignOut =async () =>{
@@ -51,12 +60,12 @@ await authClient.signOut() ;
                         <NavLink href={'/my-profile'}>My Profile</NavLink>
                     </ul>
                 </div>
-                {!user && <div className="navbar-end flex gap-2">
+                {(!user && isLoginPage) && <div className="navbar-end flex gap-2">
                     <Link className='btn bg-orange-400 text-white' href={'/signup'}>Sign Up</Link>
                     <Link className='btn bg-orange-400 text-white' href={'/login'}>Login</Link>
                 </div>}
 
-                {user &&
+                {(user && !isLoginPage) &&
 
                     <div className="navbar-end flex gap-2">
                         <div className="avatar">
