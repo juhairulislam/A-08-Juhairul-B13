@@ -71,7 +71,7 @@ const EditProfileModalUI = ({ onClose }) => {
                             type="submit"
                             className="w-full py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition text-sm sm:text-base"
                         >
-                            Save Changes
+                            Update 
                         </button>
 
                     </div>
