@@ -6,6 +6,7 @@ import { authClient } from "@/lib/auth-client"; //import the auth client
   import {toast } from 'react-toastify';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 
 const SignUpPage = () => {
@@ -52,6 +53,23 @@ toast.error(error.message);  }
     });
   };
 
+
+  const [photoUrl, setPhotoUrl] = useState('');
+const [photoError, setPhotoError] = useState(false);
+
+const handlePhotoChange = (e) => {
+    const value = e.target.value;
+    setPhotoUrl(value);
+
+    const isValid = /\.(jpg|jpeg|png|webp|avif)$/i.test(value);
+
+    if (value && !isValid) {
+        setPhotoError(true);
+    } else {
+        setPhotoError(false);
+    }
+};
+
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-linear-to-r from-orange-500 to-orange-300">
@@ -94,21 +112,40 @@ toast.error(error.message);  }
                 className="w-full p-3 border rounded-lg focus:outline-orange-400"
               />
             </div>
+<div>
+    <label className="text-sm font-medium">Photo URL</label>
+    <input
+        type="text"
+        name="photo"
+        value={photoUrl}
+        onChange={handlePhotoChange}
+        placeholder="Enter photo URL (e.g., .jpg or .png)"
+        required
+        className={`w-full p-3 border rounded-lg outline-none transition-all ${
+            photoError 
+            ? "border-red-500 focus:ring-1 focus:ring-red-400" 
+            : "border-gray-300 focus:outline-orange-400"
+        }`}
+    />
+    {photoError && (
+        <p className="text-red-500 text-[10px] mt-1 italic">
+            * Please provide a direct link ending in .png, .jpg, or .jpeg
+        </p>
+    )}
+</div>
 
-            <div>
-              <label className="text-sm font-medium">Photo URL</label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter photo URL"
-                required
-                className="w-full p-3 border rounded-lg focus:outline-orange-400"
-              />
-            </div>
-
-            <button className="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-              Register
-            </button>
+          <button
+  disabled={photoError}
+  className={`
+    w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300
+    ${photoError 
+      ? 'bg-gray-400 cursor-not-allowed opacity-70' 
+      : 'bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 active:scale-95 shadow-md hover:shadow-lg'
+    }
+  `}
+>
+  {photoError ? 'Invalid Image Format' : 'Update Profile'}
+</button>
           </form>
 
            <div className='text-center my-4 text-md'>
