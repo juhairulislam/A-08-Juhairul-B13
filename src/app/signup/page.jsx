@@ -119,7 +119,7 @@ const handlePhotoChange = (e) => {
         name="photo"
         value={photoUrl}
         onChange={handlePhotoChange}
-        placeholder="Enter photo URL (e.g., .jpg or .png)"
+        placeholder="e.g., https://example.com/photo.png"
         required
         className={`w-full p-3 border rounded-lg outline-none transition-all ${
             photoError 
@@ -144,7 +144,7 @@ const handlePhotoChange = (e) => {
     }
   `}
 >
-  {photoError ? 'Invalid Image Format' : 'Update Profile'}
+  {photoError ? 'Invalid Image Format' : 'Register'}
 </button>
           </form>
 
