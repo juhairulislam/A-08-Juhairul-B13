@@ -60,6 +60,7 @@ const handleImageChange = (e) => {
                     <div>
                         <label className="text-sm text-gray-600">Name</label>
                         <input
+                        required
                             name='name'
                             type="text"
                             placeholder="Enter your name"
@@ -70,6 +71,7 @@ const handleImageChange = (e) => {
                   <div>
     <label className="text-sm text-gray-600">Image URL</label>
     <input
+    required
         name='image'
         type="text"
         value={imageUrl}

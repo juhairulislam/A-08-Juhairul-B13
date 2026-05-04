@@ -22,7 +22,7 @@ const MyProfilePage = () => {
                         <Image
                             referrerPolicy="no-referrer"
                             alt={user?.name}
-                            src={user?.image }
+                            src={user?.image}
                             width={96}
                             height={96}
                             className="object-cover w-full h-full"
@@ -31,12 +31,11 @@ const MyProfilePage = () => {
                 </div>
 
                 <h2 className="text-lg sm:text-xl font-bold text-gray-800">
-                    {user?.name}
-                </h2>
+                    {user?.name || "Guest User"}            
+                        </h2>
 
                 <p className="text-gray-500 text-sm sm:text-base mb-6">
-                    {user?.email}
-                </p>
+{user?.email || "Log in to see your email"}                </p>
 
                 <button onClick={() => setOpenModal(true)} className="w-full bg-orange-500 hover:bg-orange-600 transition-all duration-300 text-white py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                     Edit Profile
