@@ -6,7 +6,7 @@ const BannerPage = () => {
     <div className='my-4'>
 
       <Image
-      className='w-full'
+      className='w-full animate__animated animate__pulse'
       alt='Hero Image'
       src='/SunHero.png'
       width={500} 
